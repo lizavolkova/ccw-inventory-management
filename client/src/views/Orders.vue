@@ -210,7 +210,7 @@ export default {
 
 .items-summary {
   cursor: pointer;
-  color: #3b82f6;
+  color: var(--color-brand);
   font-weight: 500;
   list-style: none;
   user-select: none;
@@ -234,7 +234,7 @@ export default {
 }
 
 .items-summary:hover {
-  color: #2563eb;
+  color: var(--color-brand-hover);
   text-decoration: underline;
 }
 
@@ -246,8 +246,8 @@ export default {
   margin-top: 0.5rem;
   background: white;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-radius: var(--radius-button);
+  box-shadow: var(--shadow-dropdown);
   padding: 0.75rem;
   z-index: 10;
   min-width: 300px;

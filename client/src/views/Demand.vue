@@ -181,12 +181,12 @@ export default {
 
       // If change is within ±2%, consider it stable and show blue
       if (changePercent <= 2) {
-        return '#3b82f6' // Blue for stable
+        return '#7c3aed' // Brand purple for stable
       }
 
       if (change > 0) return '#10b981' // Green for increasing
       if (change < 0) return '#ef4444' // Red for decreasing
-      return '#3b82f6' // Blue for no change
+      return '#7c3aed' // Brand purple for no change
     }
 
     const translatePeriod = (period) => {
@@ -233,26 +233,26 @@ export default {
 
 .trend-card {
   background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
+  border-radius: var(--radius-card);
   padding: 1.5rem;
+  box-shadow: var(--shadow-card);
   transition: all 0.2s ease;
 }
 
 .trend-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .increasing-card {
-  border-left: 4px solid #10b981;
+  border-left: 3px solid var(--color-success);
 }
 
 .stable-card {
-  border-left: 4px solid #3b82f6;
+  border-left: 3px solid var(--color-brand);
 }
 
 .decreasing-card {
-  border-left: 4px solid #ef4444;
+  border-left: 3px solid var(--color-danger);
 }
 
 .trend-header {
@@ -277,18 +277,18 @@ export default {
 }
 
 .increasing-card .trend-icon {
-  background: #d1fae5;
-  color: #059669;
+  background: var(--color-success-light);
+  color: var(--color-success);
 }
 
 .stable-card .trend-icon {
-  background: #dbeafe;
-  color: #2563eb;
+  background: var(--color-brand-light);
+  color: var(--color-brand);
 }
 
 .decreasing-card .trend-icon {
-  background: #fee2e2;
-  color: #dc2626;
+  background: var(--color-danger-light);
+  color: var(--color-danger);
 }
 
 .trend-label {
@@ -317,8 +317,8 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 0.75rem;
-  background: #f8fafc;
-  border-radius: 6px;
+  background: var(--color-surface-muted);
+  border-radius: var(--radius-sm);
   transition: background 0.2s;
 }
 
@@ -344,15 +344,15 @@ export default {
 }
 
 .increasing-card .item-change {
-  color: #059669;
+  color: var(--color-success);
 }
 
 .stable-card .item-change {
-  color: #3b82f6;
+  color: var(--color-brand);
 }
 
 .decreasing-card .item-change {
-  color: #dc2626;
+  color: var(--color-danger);
 }
 
 .item-change.neutral {
