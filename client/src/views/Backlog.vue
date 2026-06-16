@@ -63,7 +63,7 @@
                   </span>
                 </td>
                 <td>
-                  <span :style="{ color: item.days_delayed > 7 ? '#ef4444' : '#f59e0b' }">
+                  <span :style="{ color: item.days_delayed > 7 ? '#dc2626' : '#d97706' }">
                     {{ item.days_delayed }} days
                   </span>
                 </td>

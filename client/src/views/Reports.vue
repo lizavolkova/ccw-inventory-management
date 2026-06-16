@@ -323,10 +323,10 @@ export default {
 
 .card {
   background: white;
-  border-radius: 12px;
+  border-radius: var(--radius-card);
   padding: 1.5rem;
   margin-bottom: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-card);
 }
 
 .card-header {
@@ -346,11 +346,10 @@ export default {
 }
 
 .reports-table th {
-  background: #f8fafc;
   padding: 0.75rem;
   text-align: left;
   font-weight: 600;
-  color: #64748b;
+  color: var(--color-text-subtle);
   border-bottom: 2px solid #e2e8f0;
 }
 
@@ -393,14 +392,14 @@ export default {
 
 .bar {
   width: 100%;
-  background: linear-gradient(to top, #3b82f6, #60a5fa);
+  background: linear-gradient(to top, var(--color-brand), #9f7aea);
   border-radius: 4px 4px 0 0;
   transition: all 0.3s;
   cursor: pointer;
 }
 
 .bar:hover {
-  background: linear-gradient(to top, #2563eb, #3b82f6);
+  background: linear-gradient(to top, var(--color-brand-hover), var(--color-brand));
 }
 
 .bar-label {
@@ -422,10 +421,10 @@ export default {
 
 .stat-card {
   background: white;
-  border-radius: 12px;
+  border-radius: var(--radius-card);
   padding: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  border-left: 4px solid #3b82f6;
+  box-shadow: var(--shadow-card);
+  border-left: 3px solid var(--color-brand);
 }
 
 .stat-label {
@@ -448,27 +447,27 @@ export default {
 }
 
 .badge.success {
-  background: #dcfce7;
-  color: #166534;
+  background: var(--color-success-light);
+  color: var(--color-success-text);
 }
 
 .badge.warning {
-  background: #fef3c7;
-  color: #92400e;
+  background: var(--color-warning-light);
+  color: var(--color-warning-text);
 }
 
 .badge.danger {
-  background: #fee2e2;
-  color: #991b1b;
+  background: var(--color-danger-light);
+  color: var(--color-danger-text);
 }
 
 .positive-change {
-  color: #16a34a;
+  color: var(--color-success);
   font-weight: 600;
 }
 
 .negative-change {
-  color: #dc2626;
+  color: var(--color-danger);
   font-weight: 600;
 }
 

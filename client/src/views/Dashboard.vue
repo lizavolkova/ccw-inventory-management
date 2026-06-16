@@ -89,7 +89,7 @@
                   <circle cx="100" cy="100" r="65" fill="none" stroke="#10b981" stroke-width="25"
                     :stroke-dasharray="`${getCircleSegment(statusData.delivered)} 408`"
                     stroke-dashoffset="0" transform="rotate(-90 100 100)"/>
-                  <circle cx="100" cy="100" r="65" fill="none" stroke="#3b82f6" stroke-width="25"
+                  <circle cx="100" cy="100" r="65" fill="none" stroke="#0ea5e9" stroke-width="25"
                     :stroke-dasharray="`${getCircleSegment(statusData.shipped)} 408`"
                     :stroke-dashoffset="`-${getCircleSegment(statusData.delivered)}`"
                     transform="rotate(-90 100 100)"/>
@@ -106,7 +106,7 @@
                 </svg>
                 <div class="donut-legend-compact">
                   <div class="legend-item-compact"><span class="legend-dot" style="background: #10b981"></span>{{ t('status.delivered') }}</div>
-                  <div class="legend-item-compact"><span class="legend-dot" style="background: #3b82f6"></span>{{ t('status.shipped') }}</div>
+                  <div class="legend-item-compact"><span class="legend-dot" style="background: var(--color-info)"></span>{{ t('status.shipped') }}</div>
                   <div class="legend-item-compact"><span class="legend-dot" style="background: #f59e0b"></span>{{ t('status.processing') }}</div>
                   <div class="legend-item-compact"><span class="legend-dot" style="background: #ef4444"></span>{{ t('status.backordered') }}</div>
                 </div>
@@ -199,7 +199,7 @@
                     </span>
                   </td>
                   <td @click="showBacklogDetail(item)" style="cursor: pointer;">
-                    <span :style="{ color: item.days_delayed > 7 ? '#ef4444' : '#f59e0b', fontWeight: 600 }">
+                    <span :style="{ color: item.days_delayed > 7 ? '#dc2626' : '#d97706', fontWeight: 600 }">
                       {{ item.days_delayed }} {{ t('dashboard.inventoryShortages.days') }}
                     </span>
                   </td>
@@ -760,9 +760,9 @@ export default {
 
 .kpi-card {
   background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
+  border-radius: var(--radius-card);
   padding: 1rem;
+  box-shadow: var(--shadow-card);
 }
 
 .kpi-header {
@@ -794,20 +794,20 @@ export default {
 .kpi-progress-bar {
   width: 100%;
   height: 6px;
-  background: #f1f5f9;
+  background: var(--color-surface-muted);
   border-radius: 3px;
   overflow: hidden;
 }
 
 .kpi-progress {
   height: 100%;
-  background: #3b82f6;
+  background: var(--color-brand);
   border-radius: 3px;
   transition: width 0.6s ease;
 }
 
 .kpi-progress.success {
-  background: #10b981;
+  background: var(--color-success);
 }
 
 .charts-grid {
@@ -854,7 +854,7 @@ export default {
 .legend-dot {
   width: 10px;
   height: 10px;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 /* Order Health Dashboard Styles */
@@ -942,15 +942,15 @@ export default {
 }
 
 .metric-good {
-  color: #10b981;
+  color: var(--color-success);
 }
 
 .metric-warning {
-  color: #f59e0b;
+  color: var(--color-warning);
 }
 
 .metric-bad {
-  color: #ef4444;
+  color: var(--color-danger);
 }
 
 .horizontal-bar-chart {
@@ -978,8 +978,8 @@ export default {
 .h-bar-container {
   flex: 1;
   height: 32px;
-  background: #f8fafc;
-  border-radius: 6px;
+  background: var(--color-surface-muted);
+  border-radius: var(--radius-sm);
   overflow: hidden;
 }
 
@@ -1044,11 +1044,11 @@ export default {
   width: 100%;
   max-width: 60px;
   min-height: 8px;
-  background: #3b82f6;
+  background: var(--color-brand);
   border-radius: 6px 6px 0 0;
   transition: all 0.3s ease;
   cursor: pointer;
-  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 2px 4px rgba(124, 58, 237, 0.3);
 }
 
 .line-bar.empty-bar {
@@ -1058,7 +1058,7 @@ export default {
 }
 
 .line-bar:hover {
-  background: #2563eb;
+  background: var(--color-brand-hover);
   transform: scaleY(1.05);
 }
 
@@ -1109,7 +1109,7 @@ export default {
 }
 
 .clickable-row:hover {
-  background: #eff6ff !important;
+  background: var(--color-brand-light) !important;
 }
 
 /* Tasks Card Styles */
@@ -1138,12 +1138,12 @@ export default {
 
 .task-input:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: var(--color-brand);
 }
 
 .task-add-btn {
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--color-brand);
   color: white;
   border: none;
   border-radius: 8px;
@@ -1153,7 +1153,7 @@ export default {
 }
 
 .task-add-btn:hover:not(:disabled) {
-  transform: translateY(-2px);
+  opacity: 0.9;
 }
 
 .task-add-btn:disabled {
@@ -1203,7 +1203,7 @@ export default {
   width: 20px;
   height: 20px;
   cursor: pointer;
-  accent-color: #667eea;
+  accent-color: var(--color-brand);
 }
 
 .task-text {
@@ -1248,14 +1248,14 @@ export default {
 }
 
 .po-button.create {
-  background: #3b82f6;
+  background: var(--color-brand);
   color: white;
 }
 
 .po-button.create:hover {
-  background: #2563eb;
+  background: var(--color-brand-hover);
   transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 2px 4px rgba(124, 58, 237, 0.3);
 }
 
 .po-button.view {
